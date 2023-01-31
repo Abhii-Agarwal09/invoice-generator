@@ -1,9 +1,27 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import './App.css';
+import { AllInvoices, CreateInvoice } from './components';
 
 function App() {
-  return <div className="App"></div>;
+  const [isAllInvoiceVisible, setIsAllInvoiceVisible] = useState(true);
+  const btnClickHandler = (e) => {
+    e.target.name === 'view-all'
+      ? setIsAllInvoiceVisible(true)
+      : setIsAllInvoiceVisible(false);
+  };
+  return (
+    <div className='App'>
+      <div className='btn-container'>
+        <button name='view-all' className='btn' onClick={btnClickHandler}>
+          View All Invoices
+        </button>
+        <button name='create-new' className='btn' onClick={btnClickHandler}>
+          Generate Invoice
+        </button>
+      </div>
+      {isAllInvoiceVisible ? <AllInvoices /> : <CreateInvoice />}
+    </div>
+  );
 }
 
 export default App;
