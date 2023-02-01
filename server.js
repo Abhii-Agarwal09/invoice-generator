@@ -2,7 +2,10 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import connectDB from './config/db.js';
-import { getAllInvoices } from './controllers/invoiceController.js';
+import {
+  createInvoice,
+  getAllInvoices,
+} from './controllers/invoiceController.js';
 
 const { json, urlencoded } = express;
 const app = express();
@@ -35,10 +38,7 @@ app.get('/', (req, res) => {
 
 app.get('/invoice', getAllInvoices);
 
-app.post('/invoice', (req, res) => {
-  // Create new invoice and return
-  res.json({ success: true, message: 'Invoice generated', data: null });
-});
+app.post('/invoice', createInvoice);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

@@ -35,10 +35,7 @@ const CreateInvoice = () => {
   };
   const invoiceGeneratorHandler = async (e) => {
     console.log(invoiceData);
-    const res = await axios.post(
-      'http://localhost:8000/invoice',
-      JSON.stringify(invoiceData)
-    );
+    const res = await axios.post('http://localhost:8000/invoice', invoiceData);
     console.log(res);
     setInputState({
       productName: '',
@@ -85,7 +82,7 @@ const CreateInvoice = () => {
       </form>
       <button onClick={invoiceGeneratorHandler}>Create Invoice</button>
       <div className='added-products'>
-        {invoiceData.map((product, index) => {
+        {invoiceData?.map((product, index) => {
           return (
             <div>
               <div>
