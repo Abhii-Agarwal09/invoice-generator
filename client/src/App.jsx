@@ -19,7 +19,9 @@ function App() {
           Generate Invoice
         </button>
       </div>
-      {isAllInvoiceVisible ? <AllInvoices /> : <CreateInvoice />}
+      <div className='main-content'>
+        {isAllInvoiceVisible ? <AllInvoices /> : <CreateInvoice />}
+      </div>
     </div>
   );
 }

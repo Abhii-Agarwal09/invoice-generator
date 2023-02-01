@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+  padding: 0.5em 1.25em;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: rgb(238, 125, 73);
+  color: #fff;
+  border-radius: 6px;
+  /* margin: 0 1rem; */
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+input,
+select {
+  display: block;
+  padding: 0.5em 1.25em;
+  margin: 1rem 0;
+}
+
+.App {
+  /* border: 2px solid red; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.btn-container {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-content {
+  /* border: 2px solid black; */
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.added-products {
+  margin: 2rem 1rem;
+}

@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import connectDB from './config/db.js';
+import { getAllInvoices } from './controllers/invoiceController.js';
 
 const { json, urlencoded } = express;
 const app = express();
@@ -32,10 +33,7 @@ app.get('/', (req, res) => {
   res.json({ success: true, message: 'Welcome to invoice generator' });
 });
 
-app.get('/invoice', (req, res) => {
-  // Return all invoices
-  res.json({ success: true, message: 'All invoices', data: null });
-});
+app.get('/invoice', getAllInvoices);
 
 app.post('/invoice', (req, res) => {
   // Create new invoice and return
